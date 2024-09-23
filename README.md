@@ -7,9 +7,9 @@ The dataset used in the GA-ConvE paper consists of the following components:
 
 Below is our data processing workflow:
 
-（1）We run the scripts CVE_Extract.py, CWE_Extract.py, and CAPEC_Extract.py to generate CVE_Matrix.csv, CWE_Matrix.csv, and CAPEC_Matrix.csv, respectively. These files serve as the feature matrices corresponding to each entity.
+（1）Run the scripts CVE_Extract.py, CWE_Extract.py, and CAPEC_Extract.py to generate CVE_Matrix.csv, CWE_Matrix.csv, and CAPEC_Matrix.csv, respectively. These files serve as the feature matrices corresponding to each entity.
 
-（2）We then run the Matrix_Concatenation.py script, which concatenates the feature matrices of various entities, ultimately producing the final feature matrix, Characteristic_Matrix.csv. During this concatenation process, the names of the entities are retained for later classification and filtering.
+（2）Run the Matrix_Concatenation.py code to concatenate the feature matrices of various entities, resulting in the final feature matrix Characteristic_Matrix.csv. During the concatenation process, the names of the entities can be seen in the feature matrix. These names are retained for the final classification and filtering, though the code allows the option to exclude the entity names if desired.
 
 （3）The RelationMatrix_Extract.py script is executed to extract the relationship matrix, producing the Relation_Matrix.csv file. Additionally, we run Triplets_Extract.py to extract triplets of attack data, which are stored in Triplets.txt. The triplet extraction for unclassified data is shown here, and in practice, the data in kg_data.csv is classified according to the final classification result before triplets are extracted.
 
