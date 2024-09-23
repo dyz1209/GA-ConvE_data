@@ -1,7 +1,7 @@
 # GA-ConvE_data
 The dataset used in the GA-ConvE paper consists of the following components:
 
-（1）Descriptions from CVE, CWE, and CAPEC, along with relationships extracted from APT reports between APTs, CVEs, and IOCs, as well as relationships between CVE, CWE, and CAPEC collected from the MITRE website.
+（1）The CVE, CWE, and CAPEC descriptions, along with the relationships between APT (extracted from APT reports), CVE, and IOCs, as well as the relationships between CVE, CWE, and CAPEC (collected from the official MITRE website), were used to construct the kg_data.csv.
 
 （2）The IOCs data we used is sourced from various professional organizations, and all of the data has been validated by industry experts, ensuring a high level of professionalism. Due to confidentiality reasons, we only display partial information from a subset of the IOCs data here.
 
