@@ -13,6 +13,8 @@ Below is our data processing workflow:
 
 （3）The RelationMatrix_Extract.py script is executed to extract the relationship matrix, producing the Relation_Matrix.csv file. Additionally, we run Triplets_Extract.py to extract triplets of attack data, which are stored in Triplets.txt. The triplet extraction for unclassified data is shown here, and in practice, the data in kg_data.csv is classified according to the final classification result before triplets are extracted.
 
+The final processed data includes the Characteristic_Matrix.csv feature matrix and the Relation_Matrix.csv feature matrix, which are used for classification experiments. The generated triplets file, Triplets.txt, is used for further inference experiments.
+
 Notes:
 
 （1）cve_data.csv, cwe_data.csv, and capec_data.csv contain the descriptions of the corresponding data obtained from MITRE.
