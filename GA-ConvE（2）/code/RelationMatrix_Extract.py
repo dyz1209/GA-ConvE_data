@@ -2,7 +2,7 @@ import pandas as pd
 import itertools
 
 # Read the CSV file
-df = pd.read_csv('../data/kg_data.csv')
+df = pd.read_csv('../data/kg_data.csv',encoding='latin-1')
 
 # Get the last column as the category column
 category_column = df.columns[-1]
