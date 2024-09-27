@@ -1,32 +1,70 @@
 # GA-ConvE_data
-The dataset used in the GA-ConvE paper consists of the following components:
+The datasets and data processing used in the GA-ConvE paper include the following components:
 
-（1）The CVE, CWE, and CAPEC descriptions, along with the relationships between APT (extracted from APT reports), CVE, and IOCs, as well as the relationships between CVE, CWE, and CAPEC (collected from the official MITRE website), were used to construct the **kg_data.csv**.
+（1）CVE, CWE, CAPEC Descriptions: The dataset is constructed from the relationships between APT (Advanced Persistent Threat), CVE (Common Vulnerabilities and Exposures), and IOCs (Indicators of Compromise) extracted from APT reports, as well as the relationships between CVE, CWE (Common Weakness Enumeration), and CAPEC (Common Attack Pattern Enumeration and Classification) collected from the official MITRE website, which are compiled into kg_data.csv.
 
-（2）The IOCs data we use comes from various specialized organizations, and all of this data has been verified by industry experts, ensuring a high level of professionalism. Due to confidentiality reasons, we are only presenting partial information from the IOCs data in **IOCs_Matrix.csv**.
+（2）IOCs Data: The IOCs data comes from various professional institutions and has been verified by industry experts, ensuring a high degree of professionalism. Due to confidentiality concerns, only a portion of the IOC data is shown here.
+
+(3)CVE, CWE, CAPEC Data: The files cve_data.csv, cwe_data.csv, and capec_data.csv contain the respective descriptions of these datasets, which were obtained from MITRE.
+
+(4)Knowledge Graph Data: kg_data.csv was created based on the relationships between various entities, forming the links between entities that serve as the foundation for constructing the knowledge graph. It also includes non-attack data, where certain entities in the data are left blank.
+
+(5)Entity Feature Extraction Scripts:CVE_Extract.py is used to extract the CVE entity feature matrix, CVE_Matrix.csv.CWE_Extract.py is used to extract the CWE entity feature matrix, CWE_Matrix.csv.CAPEC_Extract.py is used to extract the CAPEC entity feature matrix, CAPEC_Matrix.csv.IOCs_Extract.py is used to extract the IOC entity feature matrix, IOCs_Matrix.csv.
+
+(6)Matrix Concatenation: Matrix_Concatenation.py is used to concatenate the feature matrices of various entities based on the links in kg_data.csv, resulting in the final feature matrix, Characteristic_Matrix.csv.
+
+(7)Relationship Matrix Extraction: RelationMatrix_Extract.py extracts the relationships between different data points, ultimately generating the relationship matrix Relation_Matrix.csv.
+
+(8)Triplet Extraction: Triplets_Extract.py is used to extract the triplets into Triplets.txt.
+
+(9)Main Script: main.py is the main script that calls other functions.
+
+
 
 Below is our data processing workflow:
 
-（1）Run the scripts **CVE_Extract.py**, **CWE_Extract.py**, and **CAPEC_Extract.py** to generate **CVE_Matrix.csv**, **CWE_Matrix.csv**, and **CAPEC_Matrix.csv**, respectively. These files serve as the feature matrices corresponding to each entity.
+1、Run the main.py script.
 
-（2）Run the **Matrix_Concatenation.py** code to concatenate the feature matrices of various entities, resulting in the final feature matrix **Characteristic_Matrix.csv**. During the concatenation process, the names of the entities can be seen in the feature matrix. These names are retained for the final classification and filtering, though the code allows the option to exclude the entity names if desired.
+2、In the console, input CVE_Extract to call CVE_Extract.py and generate the CVE_Matrix.csv file.
 
-（3）The **RelationMatrix_Extract.py** script is executed to extract the relationship matrix, producing the Relation_Matrix.csv file. Additionally, we run **Triplets_Extract.py** to extract triplets of attack data, which are stored in **Triplets.txt**. The triplet extraction for unclassified data is shown here, and in practice, the data in **kg_data.csv** is classified according to the final classification result before triplets are extracted.
+3、In the console, input CWE_Extract to call CWE_Extract.py and generate the CWE_Matrix.csv file.
 
-The final processed data includes the **Characteristic_Matrix.csv** feature matrix and the **Relation_Matrix.csv** relationship matrix, which are used for classification experiments. The generated triplets file, **Triplets.txt**, is used for further inference experiments.
+4、In the console, input CAPEC_Extract to call CAPEC_Extract.py and generate the CAPEC_Matrix.csv file.
+
+5、In the console, input IOCs_Extract to call IOCs_Extract.py and generate the IOCs_Matrix.csv file.
+
+6、In the console, input Matrix_Concatenation to call Matrix_Concatenation.py and generate the Characteristic_Matrix.csv file.
+
+7、In the console, input RelationMatrix_Extract to call RelationMatrix_Extract.py and generate the Relation_Matrix.csv file.
+
+8、In the console, input Triplets_Extract to call Triplets_Extract.py and generate the Triplets.txt file.
+
+9、In the console, input 0 to exit the program.
 
 Notes:
 
-（1）cve_data.csv, cwe_data.csv, and capec_data.csv contain the descriptions of the corresponding data obtained from MITRE.
+1、The final processed data used for the experiment includes the Characteristic_Matrix.csv feature matrix and the Relation_Matrix.csv relationship matrix, which are used for classification experiments. The generated triplets in Triplets.txt are used for further inference experiments.
 
-（2）kg_data.csv contains the links between entities, based on the relationships between them, which serve as the foundation for building the knowledge graph. It also includes non-attack data, where one of the entities in the dataset may be set as null.
+2、The data in the GA-ConvE (1) folder contains the processed data and code that has already been handled according to the workflow described above. The data in the GA-ConvE (2) folder contains the unprocessed data and code.
 
-（3）CVE_Extract.py is the code used to extract the CVE entity feature matrix, CWE_Extract.py is used for extracting the CWE entity feature matrix, and CAPEC_Extract.py extracts the CAPEC entity feature matrix. IOCs_Matrix.csv is the pre-extracted feature matrix for IOCs entities, and due to confidentiality concerns, the detailed process is not disclosed.
 
-（4）Matrix_Concatenation.py is responsible for concatenating the feature matrices extracted from each entity based on the links in Kg_data.csv, resulting in the final feature matrix.
 
-（5）RelationMatrix_Extract.py extracts the relationships between data points, ultimately producing the relationship matrix.
 
-（6）Triplets_Extract.py is used to extract triplets from the data.
 
-（7）The data in the GA-ConvE (1) file is the processed data and code, following the steps described above. The data in the GA-ConvE (2) file is unprocessed and contains the raw data and code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
