@@ -45,7 +45,7 @@ Notes:
 
 1、The final processed data used for the experiment includes the **Characteristic_Matrix.csv** feature matrix and the **Relation_Matrix.csv** relationship matrix, which are used for classification experiments. The generated triplets in **Triplets.txt** are used for further inference experiments.
 
-2、The data in the **GA-ConvE (1)** folder contains the processed data and code that has already been handled according to the workflow described above. The data in the **GA-ConvE (2)** folder contains the unprocessed data and code.
+2、The data in the **GA-ConvE** folder contains the processed data and code that has already been handled according to the workflow described above. The data in the **GA-ConvE_empty** folder contains the unprocessed data and code.
 
 
 
